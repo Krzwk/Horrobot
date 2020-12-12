@@ -34,8 +34,6 @@ public class PlayerController : MonoBehaviour
     {
          move.x = Input.GetAxisRaw("Horizontal");
          move.y = Input.GetAxisRaw("Vertical");
-         
-        updateGasComp();
     }
 
     private void FixedUpdate()
@@ -45,9 +43,13 @@ public class PlayerController : MonoBehaviour
     }
     public static void updateGasComp (){
         N2 = UnityEngine.Random.Range(78.00f, 78.30f);
+        N2 = N2 - N2 % 0.01f;
         O2 = UnityEngine.Random.Range(20.80f, 20.98f);
+        O2 = O2 - O2 % 0.01f;
         Ar = UnityEngine.Random.Range(0.90f, 0.94f);
+        Ar = Ar - Ar % 0.01f;
         CO2 = UnityEngine.Random.Range(0.06f, 0.07f);
+        CO2 = CO2 - CO2 % 0.01f;
         gasComposition.text = "N2: " + N2.ToString() + "%" + "\nO2: " + 02.ToString() + "%"  + "\nAr: " + Ar.ToString() + "%" + "\nCO2: " + CO2.ToString() + "%" + "\nKr: " + Kr.ToString() + " ppm";
 
     }
