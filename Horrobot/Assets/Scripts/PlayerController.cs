@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private float blinkRate = 0.1f;
     private int numberOfTimesToBlink = 5;
     private int blinkCount = 0;
+    [SerializeField]
+    private GameObject playerExplosion;
     public enum MissingSenses{
         None,
         Sight,
@@ -39,9 +42,11 @@ public class PlayerController : MonoBehaviour
         Invincible
     }
     [SerializeField]
-    public MissingSenses missingSense = MissingSenses.Sight;
+    private MissingSenses missingSense = MissingSenses.None;
     public State state = State.Playing;
-
+    public Enemy[] enemies;
+    private Boolean smellSensor = true;
+    public Light torchlight;
     void Awake()
     {
         gasComposition = GameObject.Find("GasComp").GetComponent<Text>();
@@ -51,13 +56,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         move.x = Input.GetAxisRaw("Horizontal");
-         move.y = Input.GetAxisRaw("Vertical");
-         if(Time.time - lastDisplay > timeBetweenCompDisplay){
-             updateGasComp();
-             lastDisplay = Time.time;
+        if (missingSense != MissingSenses.Dead)
+        {
+
+            move.x = Input.GetAxisRaw("Horizontal");
+            move.y = Input.GetAxisRaw("Vertical");
+            if(Time.time - lastDisplay > timeBetweenCompDisplay && smellSensor){
+                updateGasComp();
+                lastDisplay = Time.time;
             
              }
+         }
     }
 
     private void FixedUpdate()
@@ -82,10 +91,24 @@ public class PlayerController : MonoBehaviour
     public IEnumerator GotHit() {
         
 
-        //do sth after 1.5 seconds
+        missingSense++;
         if (missingSense != MissingSenses.Dead)
         {
-            missingSense++;
+            if (missingSense == MissingSenses.Sight)
+                torchlight.range = 5;
+            if (missingSense == MissingSenses.Hearing)
+                {
+                    foreach (Enemy enemy in enemies)
+                    {
+                        AudioSource audioSource = enemy.GetComponent<AudioSource>();
+                        audioSource.mute = !audioSource.mute;
+                    }
+                }
+            if (missingSense == MissingSenses.Smell)
+            {
+                smellSensor = false;
+                gasComposition.text = "N2: ERROR %\nO2: ERROR %\nAr: ERROR %\nCO2: ERROR %\nKr: ERROR ppm";
+            }
             gameObject.GetComponent<Renderer>().enabled = true;
             state = State.Invincible;
             while(blinkCount < numberOfTimesToBlink){
@@ -97,6 +120,15 @@ public class PlayerController : MonoBehaviour
             }
             blinkCount = 0;
             state = State.Playing;
+            
+            yield return new WaitForSeconds(2f);
+        }
+        else 
+        {
+            
+            Instantiate(playerExplosion, transform.position,Quaternion.identity);
+            gameObject.GetComponent<Renderer>().enabled = false;
+            //SceneManager.LoadScene("GameOver");
         }
 
     }
