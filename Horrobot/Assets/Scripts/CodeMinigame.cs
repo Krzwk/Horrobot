@@ -22,16 +22,6 @@ public class CodeMinigame : MonoBehaviour
     private int x,y,z;
     private int result = 2;
 
-<<<<<<< Updated upstream
-    //void Start(){
-    //    PopUp();
-   // }
-=======
-    void Start(){
-        PopUp();   
-    }
->>>>>>> Stashed changes
-       
     void Update(){
         if(x==1){
             result = result*2;
