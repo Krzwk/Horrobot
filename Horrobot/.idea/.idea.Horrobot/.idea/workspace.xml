@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d04f4d7e-af44-4d52-a02f-7b18aa2370ef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/enemy-LS-LArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/enemy-LS-RArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/enemy-RS-LArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/enemy-RS-RArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/enemy-back-LArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/enemy-back-RArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/enemy-back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/enemy-front-LArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/enemy-front-RArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/enemy-front.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/enemy-leftside.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/enemy-rightside.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/robot-LS-LArmInFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/robot-LS-RArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/robot-RS-LArmInFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/robot-RS-RArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/robot-back-LArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/robot-back-RArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/robot-back.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/robot-front-LArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/robot-front-RArmFront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/robot-front.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/robot-leftside.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Player&amp;EnemyAssets/robot-rightside.png" beforeDir="false" />
-    </list>
+    <list default="true" id="d04f4d7e-af44-4d52-a02f-7b18aa2370ef" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +64,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1607774623599</updated>
-      <workItem from="1607774637957" duration="1838000" />
+      <workItem from="1607774637957" duration="1848000" />
     </task>
     <servers />
   </component>
