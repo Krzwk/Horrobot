@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 move;
     public float horizontalMove = 0f;
     public float verticalMove = 0f;
+    public static Text gasComposition;
 
     private static float N2 = 78.08f;
     private static float O2 = 20.94f;
