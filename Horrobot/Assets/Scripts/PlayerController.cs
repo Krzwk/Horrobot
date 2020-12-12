@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     //public CharacterController controller;
     public float moveSpeed;
     public Rigidbody2D myRigid;
+    public Animator animator;
 
     public Vector2 move;
     public float horizontalMove = 0f;
@@ -61,6 +62,9 @@ public class PlayerController : MonoBehaviour
 
             move.x = Input.GetAxisRaw("Horizontal");
             move.y = Input.GetAxisRaw("Vertical");
+            animator.SetFloat("Horizontal",move.x);
+            animator.SetFloat("Vertical",move.y);
+            animator.SetFloat("Speed",move.sqrMagnitude);
             if(Time.time - lastDisplay > timeBetweenCompDisplay && smellSensor){
                 updateGasComp();
                 lastDisplay = Time.time;
@@ -121,14 +125,15 @@ public class PlayerController : MonoBehaviour
             blinkCount = 0;
             state = State.Playing;
             
-            yield return new WaitForSeconds(2f);
+            
         }
         else 
         {
             
             Instantiate(playerExplosion, transform.position,Quaternion.identity);
             gameObject.GetComponent<Renderer>().enabled = false;
-            //SceneManager.LoadScene("GameOver");
+            yield return new WaitForSeconds(2f);
+            SceneManager.LoadScene("GameOver");
         }
 
     }
