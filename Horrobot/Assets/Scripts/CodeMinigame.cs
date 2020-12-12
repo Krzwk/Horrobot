@@ -12,9 +12,9 @@ public class CodeMinigame : MonoBehaviour
 
     private int x,y,z,result;
 
-    void Start(){
-        PopUp();
-    }
+    //void Start(){
+    //    PopUp();
+   // }
        
 //     void Update(){
 //         while(result!=8)
