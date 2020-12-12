@@ -24,6 +24,23 @@ public class PlayerController : MonoBehaviour
     private static float Kr = 3.30f;
     private static float timeBetweenCompDisplay = 1f; 
     private static float lastDisplay = 0f;
+    private float blinkRate = 0.1f;
+    private int numberOfTimesToBlink = 5;
+    private int blinkCount = 0;
+    public enum MissingSenses{
+        None,
+        Sight,
+        Smell,
+        Hearing,
+        Dead
+    }
+    public enum State{
+        Playing,
+        Invincible
+    }
+    [SerializeField]
+    public MissingSenses missingSense = MissingSenses.Sight;
+    public State state = State.Playing;
 
     void Awake()
     {
@@ -60,4 +77,28 @@ public class PlayerController : MonoBehaviour
         gasComposition.text = "N2: " + N2.ToString() + "%" + "\nO2: " + O2.ToString() + "%"  + "\nAr: " + Ar.ToString() + "%" + "\nCO2: " + CO2.ToString() + "%" + "\nKr: " + Kr.ToString() + " ppm";
 
     }
+    
+
+    public IEnumerator GotHit() {
+        
+
+        //do sth after 1.5 seconds
+        if (missingSense != MissingSenses.Dead)
+        {
+            missingSense++;
+            gameObject.GetComponent<Renderer>().enabled = true;
+            state = State.Invincible;
+            while(blinkCount < numberOfTimesToBlink){
+                gameObject.GetComponent<Renderer>().enabled = !gameObject.GetComponent<Renderer>().enabled;
+                if(gameObject.GetComponent<Renderer>().enabled){
+                    blinkCount++;
+                }
+                yield return new WaitForSeconds(blinkRate);
+            }
+            blinkCount = 0;
+            state = State.Playing;
+        }
+
+    }
+
 }

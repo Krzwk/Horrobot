@@ -10,6 +10,15 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 1f;
     private Rigidbody2D rigidBody;
     private Vector2 movement;
+    [SerializeField]
+    private Vector3 pointA;
+    [SerializeField]
+    private Vector3 pointB;
+    [SerializeField]
+    private Boolean direction;
+    
+     
+    
     void Start()
     {
         rigidBody = this.GetComponent<Rigidbody2D>();
@@ -18,11 +27,24 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        rigidBody.rotation = angle;
-        direction.Normalize();
-        movement = direction;
+        float amtToMove = moveSpeed * Time.deltaTime;
+        if (direction)
+            transform.position = Vector3.MoveTowards(transform.position, pointA, amtToMove );
+        else
+            transform.position = Vector3.MoveTowards(transform.position, pointB, amtToMove );
+        if (transform.position == pointA)
+        {
+            direction = !direction;
+        }
+        if (transform.position == pointB)
+        {
+            direction = !direction;
+        }
+        //Vector3 direction = player.position - transform.position;
+        //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //rigidBody.rotation = angle;
+        //direction.Normalize();
+        //movement = direction;
     }
 
     void moveCharacter(Vector2 direction)
@@ -34,4 +56,16 @@ public class Enemy : MonoBehaviour
     {
        moveCharacter(movement);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        PlayerController player = other.gameObject.GetComponent<PlayerController>();
+        if(other.tag == "Player" && player.state == PlayerController.State.Playing)
+        {
+             
+            StartCoroutine(player.GotHit());
+
+        }
+    }
+    
 }
