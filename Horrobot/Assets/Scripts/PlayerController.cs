@@ -43,11 +43,11 @@ public class PlayerController : MonoBehaviour
         Invincible
     }
     [SerializeField]
-    private MissingSenses missingSense = MissingSenses.None;
+    private static MissingSenses missingSense = MissingSenses.None;
     public State state = State.Playing;
-    public GameObject[] enemies;
-    private Boolean smellSensor = true;
-    public Light torchlight;
+    public static GameObject[] enemies;
+    private static Boolean smellSensor = true;
+    static public Light torchlight;
     void Awake()
     {
         gasComposition = GameObject.Find("GasComp").GetComponent<Text>();
@@ -91,7 +91,31 @@ public class PlayerController : MonoBehaviour
 
     }
     
+    public static void GotRepaired(){
+        if (missingSense != MissingSenses.None)
+            {
+            missingSense--;
+        
+            if (missingSense == MissingSenses.None)
+                torchlight.range = 20;
+            else if (missingSense == MissingSenses.Sight)
+                {
+                    smellSensor = true;
+                }
+            else if (missingSense == MissingSenses.Smell){
+                enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                    foreach (GameObject enemy in enemies)
+                    {
+                        AudioSource audioSource = enemy.GetComponent<AudioSource>();
+                        audioSource.mute = !audioSource.mute;
+                    }
+            }
 
+            }
+        
+
+        
+    }
     public IEnumerator GotHit() {
         
 
