@@ -11,6 +11,7 @@
           <e p="AndGamePopUp.cs" t="Include" />
           <e p="ButtonBehaviour.cs" t="Include" />
           <e p="CodeMinigame.cs" t="Include" />
+          <e p="DoorBehaviour.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
           <e p="PfützleBehaviour.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />

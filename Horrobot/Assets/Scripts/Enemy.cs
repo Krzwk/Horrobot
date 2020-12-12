@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     public Transform player;
     public float moveSpeed = 1f;
+    public Animator animator;
     private Rigidbody2D rigidBody;
     private Vector2 movement;
     [SerializeField]
@@ -40,6 +41,13 @@ public class Enemy : MonoBehaviour
         {
             direction = !direction;
         }
+
+        if (direction)
+        {
+            animator.SetFloat("Horizontal",(pointA - transform.position).x);
+            animator.SetFloat("Vertical",(pointA - transform.position).y);
+        }
+
         //Vector3 direction = player.position - transform.position;
         //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         //rigidBody.rotation = angle;
