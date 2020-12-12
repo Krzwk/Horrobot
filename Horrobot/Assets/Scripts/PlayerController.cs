@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private MissingSenses missingSense = MissingSenses.None;
     public State state = State.Playing;
-    public Enemy[] enemies;
+    public GameObject[] enemies;
     private Boolean smellSensor = true;
     public Light torchlight;
     void Awake()
@@ -98,11 +98,13 @@ public class PlayerController : MonoBehaviour
         missingSense++;
         if (missingSense != MissingSenses.Dead)
         {
+
             if (missingSense == MissingSenses.Sight)
                 torchlight.range = 5;
             if (missingSense == MissingSenses.Hearing)
                 {
-                    foreach (Enemy enemy in enemies)
+                    enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                    foreach (GameObject enemy in enemies)
                     {
                         AudioSource audioSource = enemy.GetComponent<AudioSource>();
                         audioSource.mute = !audioSource.mute;
