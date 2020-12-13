@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D myRigid;
     public Animator animator;
+    public int numberOfFactoryGamesSolved;
 
     public Vector2 move;
     public float horizontalMove = 0f;
