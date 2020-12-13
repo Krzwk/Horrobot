@@ -43,6 +43,8 @@ public class CodeMinigameFactory : MonoBehaviour
 
     void Update(){
           
+        
+
         if(x==1){
             result = result*2;
             Debug.Log(result);

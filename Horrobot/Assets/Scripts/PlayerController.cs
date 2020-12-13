@@ -95,6 +95,10 @@ public class PlayerController : MonoBehaviour
 
              StartCoroutine(wasdTutorial());
          }
+
+         if(transform.position.y> 42 ){
+             SceneManager.LoadScene(4);
+         }
     }
 
     private void FixedUpdate()

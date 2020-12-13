@@ -213,9 +213,9 @@ GameObject:
   - component: {fileID: 20546673}
   - component: {fileID: 20546678}
   - component: {fileID: 20546677}
-  - component: {fileID: 20546676}
   - component: {fileID: 20546674}
   - component: {fileID: 20546675}
+  - component: {fileID: 20546676}
   m_Layer: 5
   m_Name: PopUpBox (1)
   m_TagString: Untagged
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 20546672}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 269901e53291446a2853961d3ad2ef29, type: 3}
+  m_Script: {fileID: 11500000, guid: b57cc4554c4c5cc4e854d52ce430f63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   popUpBox: {fileID: 20546672}
@@ -377,12 +377,13 @@ MonoBehaviour:
   Button2: {fileID: 1642717485}
   Button3: {fileID: 1013186494}
   lastStep: 0
-  timeBetweenSteps: 0.25
+  timeBetweenSteps: 1
+  player: {fileID: 685005602}
   openDoor: {fileID: 11400000, guid: 5a63373a007bea74e84fe028ca7571b0, type: 2}
   closedDoorMap: {fileID: 1287473986}
   openDoorMap: {fileID: 2094064534}
-  StorageDoor: {x: -3, y: 6, z: 0}
-  whoosh: {fileID: 20546675}
+  StorageDoor: {x: -63, y: 41, z: 0}
+  whoosh: {fileID: 0}
 --- !u!114 &20546677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +509,10 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 14.3
       objectReference: {fileID: 0}
+    - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3e98d24274dd2d46b0bf937394d8078, type: 3}
     - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
       propertyPath: rolloffMode
       value: 1
@@ -895,9 +900,9 @@ GameObject:
   - component: {fileID: 161773907}
   - component: {fileID: 161773912}
   - component: {fileID: 161773911}
-  - component: {fileID: 161773910}
   - component: {fileID: 161773908}
   - component: {fileID: 161773909}
+  - component: {fileID: 161773910}
   m_Layer: 5
   m_Name: PopUpBox (2)
   m_TagString: Untagged
@@ -1050,7 +1055,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 161773906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 269901e53291446a2853961d3ad2ef29, type: 3}
+  m_Script: {fileID: 11500000, guid: b57cc4554c4c5cc4e854d52ce430f63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   popUpBox: {fileID: 161773906}
@@ -1059,12 +1064,13 @@ MonoBehaviour:
   Button2: {fileID: 146864145}
   Button3: {fileID: 963147308}
   lastStep: 0
-  timeBetweenSteps: 0.25
+  timeBetweenSteps: 1
+  player: {fileID: 685005602}
   openDoor: {fileID: 11400000, guid: 5a63373a007bea74e84fe028ca7571b0, type: 2}
   closedDoorMap: {fileID: 1287473986}
   openDoorMap: {fileID: 2094064534}
-  StorageDoor: {x: -3, y: 6, z: 0}
-  whoosh: {fileID: 161773909}
+  StorageDoor: {x: -63, y: 41, z: 0}
+  whoosh: {fileID: 0}
 --- !u!114 &161773911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2119,6 +2125,10 @@ PrefabInstance:
       value: 14.3
       objectReference: {fileID: 0}
     - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3e98d24274dd2d46b0bf937394d8078, type: 3}
+    - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
       propertyPath: rolloffMode
       value: 1
       objectReference: {fileID: 0}
@@ -2449,6 +2459,10 @@ PrefabInstance:
       value: 14.3
       objectReference: {fileID: 0}
     - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3e98d24274dd2d46b0bf937394d8078, type: 3}
+    - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
       propertyPath: rolloffMode
       value: 1
       objectReference: {fileID: 0}
@@ -2754,6 +2768,7 @@ MonoBehaviour:
   moveSpeed: 10
   myRigid: {fileID: 685005606}
   animator: {fileID: 685005607}
+  numberOfFactoryGamesSolved: 0
   move: {x: 0, y: 0}
   horizontalMove: 0
   verticalMove: 0
@@ -35311,6 +35326,10 @@ PrefabInstance:
       value: 14.3
       objectReference: {fileID: 0}
     - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3e98d24274dd2d46b0bf937394d8078, type: 3}
+    - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
       propertyPath: rolloffMode
       value: 1
       objectReference: {fileID: 0}
@@ -36620,6 +36639,10 @@ PrefabInstance:
       value: 14.3
       objectReference: {fileID: 0}
     - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3e98d24274dd2d46b0bf937394d8078, type: 3}
+    - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
       propertyPath: rolloffMode
       value: 1
       objectReference: {fileID: 0}
@@ -37054,6 +37077,10 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 14.3
       objectReference: {fileID: 0}
+    - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3e98d24274dd2d46b0bf937394d8078, type: 3}
     - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
       propertyPath: rolloffMode
       value: 1
@@ -37579,7 +37606,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.6792453, g: 0.49505633, b: 0.18262726, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 25
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -43816,6 +43843,10 @@ PrefabInstance:
       value: 14.3
       objectReference: {fileID: 0}
     - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3e98d24274dd2d46b0bf937394d8078, type: 3}
+    - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
       propertyPath: rolloffMode
       value: 1
       objectReference: {fileID: 0}
@@ -45686,6 +45717,10 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 14.3
       objectReference: {fileID: 0}
+    - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a3e98d24274dd2d46b0bf937394d8078, type: 3}
     - target: {fileID: 4693360791487844254, guid: d550f07d0c05dcb468d26bb0784f35f6, type: 3}
       propertyPath: rolloffMode
       value: 1
