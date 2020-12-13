@@ -10,7 +10,6 @@ public class CodeMinigame : MonoBehaviour
     public Button Button1;
     public Button Button2;
     public Button Button3;
-    public Text text;
 
     [SerializeField]
     private float lastStep;
@@ -38,8 +37,7 @@ public class CodeMinigame : MonoBehaviour
         btn3.onClick.AddListener(TaskOnClick3);
        
          
-        Text txt = text.GetComponent<Text>();
-        txt.text = "Code ";
+
     }
 
     void Update(){
