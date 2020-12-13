@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Tilemaps;
 public class CodeMinigame : MonoBehaviour
 {
     public GameObject popUpBox;
@@ -21,6 +22,11 @@ public class CodeMinigame : MonoBehaviour
 
     private int x,y,z;
     private int result = 2;
+    public Tile openDoor;
+    public Tilemap closedDoorMap;
+    public Tilemap openDoorMap;
+    public Vector3Int StorageDoor; 
+    public AudioSource whoosh;
 
     void Start(){
         popUpBox.SetActive(true);
@@ -83,6 +89,11 @@ public class CodeMinigame : MonoBehaviour
             btn2.GetComponent<Image>().color = Color.green;
             btn3.GetComponent<Image>().color = Color.green;
             animator.SetTrigger("close");
+            whoosh.Play();
+            closedDoorMap.SetTile(StorageDoor, null);
+            openDoorMap.SetTile(StorageDoor, openDoor);
+            Debug.Log("Bang!"); 
+            //Doorhandler.closeStorageDoor();
             Destroy(popUpBox);
         }
            

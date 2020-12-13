@@ -17,9 +17,11 @@ public class Enemy : MonoBehaviour
     private Vector3 pointB;
     [SerializeField]
     private Boolean direction;
+    [SerializeField]
+    private GameObject enemyExplosion;
+    Boolean exploded = false;
     
-     
-    
+
     void Start()
     {
         rigidBody = this.GetComponent<Rigidbody2D>();
@@ -44,15 +46,19 @@ public class Enemy : MonoBehaviour
 
         if (direction)
         {
-            if ((pointA - transform.position).x > 0)
-                animator.SetFloat("Horizontal",1f);
+            //if ((pointA - transform.position).x > 0)
+            //    animator.SetFloat("Horizontal",1f);
                 
-            if ((pointA - transform.position).x < 0)
-                animator.SetFloat("Horizontal",-1f);
-            if ((pointA - transform.position).y > 0)
-                animator.SetFloat("Vertical",1f);
-            if ((pointA - transform.position).y < 0)
-                animator.SetFloat("Vertical",-1f);
+            //if ((pointA - transform.position).x < 0)
+            //    animator.SetFloat("Horizontal",-1f);
+            //if ((pointA - transform.position).y > 0)
+            //    animator.SetFloat("Vertical",1f);
+            //if ((pointA - transform.position).y < 0)
+            //    animator.SetFloat("Vertical",-1f);
+            if ((pointA - transform.position).x == 0)
+                animator.SetFloat("Vertical",(pointA - transform.position).y);
+            else if ((pointA - transform.position).y == 0)
+                 animator.SetFloat("Horizontal",(pointA - transform.position).y);
         }
         else
             {
@@ -91,8 +97,9 @@ public class Enemy : MonoBehaviour
         if(other.tag == "Player" && player.state == PlayerController.State.Playing)
         {
              
-            StartCoroutine(player.GotHit());
-
+            player.hit();
+            Instantiate(enemyExplosion, transform.position,Quaternion.identity);
+            Destroy(this.gameObject);
         }
     }
     

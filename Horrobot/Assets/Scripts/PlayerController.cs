@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+using UnityEngine.Tilemaps;
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -44,11 +45,13 @@ public class PlayerController : MonoBehaviour
         Invincible
     }
     [SerializeField]
-    public static MissingSenses missingSense = MissingSenses.None;
+    public  MissingSenses missingSense;
     public State state = State.Playing;
     public static GameObject[] enemies;
     private static Boolean smellSensor = true;
-    static public Light torchlight;
+    public Light torchlight;
+    public Tile storageDoorTile;
+    public Tilemap highlightMap;
     void Awake()
     {
         gasComposition = GameObject.Find("GasComp").GetComponent<Text>();
@@ -92,7 +95,7 @@ public class PlayerController : MonoBehaviour
 
     }
     
-    public static void GotRepaired(){
+    public void GotRepaired(){
         if (missingSense != MissingSenses.None)
             {
             missingSense--;
@@ -117,6 +120,9 @@ public class PlayerController : MonoBehaviour
 
         
     }
+    public void hit(){
+        StartCoroutine(GotHit());
+    }
     public IEnumerator GotHit() {
         
 
@@ -125,7 +131,7 @@ public class PlayerController : MonoBehaviour
         {
 
             if (missingSense == MissingSenses.Sight)
-                torchlight.range = 5;
+                {torchlight.range = 5;}
             if (missingSense == MissingSenses.Hearing)
                 {
                     enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -156,11 +162,10 @@ public class PlayerController : MonoBehaviour
         }
         else 
         {
-            
             Instantiate(playerExplosion, transform.position,Quaternion.identity);
             gameObject.GetComponent<Renderer>().enabled = false;
             yield return new WaitForSeconds(2f);
-            SceneManager.LoadScene("GameOver");
+           SceneManager.LoadScene("GameOver");
         }
 
     }

@@ -57,3 +57,6 @@ TagManager:
   - name: Enemy
     uniqueID: 4014435353
     locked: 0
+  - name: Hints
+    uniqueID: 735124747
+    locked: 0
