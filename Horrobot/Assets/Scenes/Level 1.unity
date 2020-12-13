@@ -845,10 +845,7 @@ MonoBehaviour:
   horizontalMove: 0
   verticalMove: 0
   playerExplosion: {fileID: 6723220410508965333, guid: 7701fd00741ac4a4d8378451f8bc7126, type: 3}
-  missingSense: 1
   state: 0
-  enemies: []
-  torchlight: {fileID: 1548379098}
 --- !u!212 &685005603
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8767,7 +8764,7 @@ MonoBehaviour:
   Button1: {fileID: 1697120325}
   Button2: {fileID: 1304818354}
   Button3: {fileID: 278552562}
-  text: {fileID: 0}
+  text: {fileID: 1965747113}
   lastStep: 0
   timeBetweenSteps: 0.25
 --- !u!114 &1783267407
