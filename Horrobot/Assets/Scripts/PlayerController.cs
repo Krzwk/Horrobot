@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     
     private static float CO2;
     public static float Kr = 3.30f;
-    private static float timeBetweenCompDisplay = 1f; 
+    private static float timeBetweenCompDisplay = 0.5f; 
     private static float lastDisplay = 0f;
     private float blinkRate = 0.2f;
     private int numberOfTimesToBlink = 7;
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     private GameObject playerExplosion;
     private static Boolean poisoned = false;
     private static int timePoisoned = 0;
-    public static int maximalPoisonTime = 50;
+    public static int maximalPoisonTime = 5;
 
 
     public enum MissingSenses{
@@ -221,7 +221,7 @@ public class PlayerController : MonoBehaviour
         Tutorial.text = "Analysis: All robots seem to malfunction.\nShould keep a safe distance";
         yield return new WaitForSeconds(5f);
         Tutorial.text = "";
-        //empty.destroy();
+        empty.destroy();
     }
     public void gettingPoisoned(){
         Kr = 10f;
