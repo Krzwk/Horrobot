@@ -15,14 +15,29 @@ public class CodeMinigame : MonoBehaviour
     private float lastStep;
 
     [SerializeField]
-    private float timeBetweenSteps = 0.25f;
+    private float timeBetweenSteps = 1f;
 
     private bool color ;
 
     private int x,y,z;
     private int result = 2;
 
+    void Start(){
+        popUpBox.SetActive(true);
+        Button btn1=Button1.GetComponent<Button>();
+        Button btn2=Button2.GetComponent<Button>();
+        Button btn3=Button3.GetComponent<Button>();
+        btn1.onClick.AddListener(TaskOnClick1);
+        btn2.onClick.AddListener(TaskOnClick2);
+        btn3.onClick.AddListener(TaskOnClick3);
+       
+         
+        Text txt = text.GetComponent<Text>();
+        txt.text = "Code ";
+    }
+
     void Update(){
+          
         if(x==1){
             result = result*2;
             Debug.Log(result);
@@ -61,36 +76,43 @@ public class CodeMinigame : MonoBehaviour
             
         if(result==-6){
             Debug.Log("Yay! Solved"); 
-            result = 0;
             Button btn1=Button1.GetComponent<Button>();
             Button btn2=Button2.GetComponent<Button>();
             Button btn3=Button3.GetComponent<Button>();
             btn1.GetComponent<Image>().color = Color.green;
             btn2.GetComponent<Image>().color = Color.green;
             btn3.GetComponent<Image>().color = Color.green;
+            animator.SetTrigger("close");
+            Destroy(popUpBox);
         }
            
         if(x>1&&y>2&&z>3){
-            result = 2;
-            x=0;
-            y=0;
-            z=0;
+            
+           
+            Button btn1=Button1.GetComponent<Button>();
+            Button btn2=Button2.GetComponent<Button>();
+            Button btn3=Button3.GetComponent<Button>();
+            btn1.GetComponent<Image>().color = Color.red;
+            btn2.GetComponent<Image>().color = Color.red;
+            btn3.GetComponent<Image>().color = Color.red;
+            animator.SetTrigger("close");
+            
         }       
    }
 
     public void PopUp(){
-        popUpBox.SetActive(true);
-        animator.SetTrigger("pop");
-
         Button btn1=Button1.GetComponent<Button>();
         Button btn2=Button2.GetComponent<Button>();
         Button btn3=Button3.GetComponent<Button>();
-        btn1.onClick.AddListener(TaskOnClick1);
-        btn2.onClick.AddListener(TaskOnClick2);
-        btn3.onClick.AddListener(TaskOnClick3);
-         
-        Text txt = text.GetComponent<Text>();
-        txt.text = "Code ";
+        btn1.GetComponent<Image>().color = Color.white;
+        btn2.GetComponent<Image>().color = Color.white;
+        btn3.GetComponent<Image>().color = Color.white;
+        animator.SetTrigger("pop");
+        result = 2;
+        x=0;
+        y=0;
+        z=0;
+        
     }
 
     void TaskOnClick1(){
