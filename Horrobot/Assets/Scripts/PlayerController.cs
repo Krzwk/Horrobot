@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private int blinkCount = 0;
     [SerializeField]
     private GameObject playerExplosion;
+
     public enum MissingSenses{
         None,
         Sight,
@@ -43,7 +44,7 @@ public class PlayerController : MonoBehaviour
         Invincible
     }
     [SerializeField]
-    private static MissingSenses missingSense = MissingSenses.None;
+    public static MissingSenses missingSense = MissingSenses.None;
     public State state = State.Playing;
     public static GameObject[] enemies;
     private static Boolean smellSensor = true;

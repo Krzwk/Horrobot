@@ -44,9 +44,29 @@ public class Enemy : MonoBehaviour
 
         if (direction)
         {
-            animator.SetFloat("Horizontal",(pointA - transform.position).x);
-            animator.SetFloat("Vertical",(pointA - transform.position).y);
+            if ((pointA - transform.position).x > 0)
+                animator.SetFloat("Horizontal",1f);
+                
+            if ((pointA - transform.position).x < 0)
+                animator.SetFloat("Horizontal",-1f);
+            if ((pointA - transform.position).y > 0)
+                animator.SetFloat("Vertical",1f);
+            if ((pointA - transform.position).y < 0)
+                animator.SetFloat("Vertical",-1f);
         }
+        else
+            {
+            if ((pointB - transform.position).x > 0)
+                animator.SetFloat("Horizontal",1f);
+                
+            if ((pointB - transform.position).x < 0)
+                animator.SetFloat("Horizontal",-1f);
+            if ((pointB - transform.position).y > 0)
+                animator.SetFloat("Vertical",1f);
+            if ((pointB - transform.position).y < 0)
+                animator.SetFloat("Vertical",-1f);
+        }
+        
 
         //Vector3 direction = player.position - transform.position;
         //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
