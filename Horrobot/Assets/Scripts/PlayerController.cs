@@ -205,7 +205,7 @@ public class PlayerController : MonoBehaviour
             Instantiate(playerExplosion, transform.position,Quaternion.identity);
             gameObject.GetComponent<Renderer>().enabled = false;
             yield return new WaitForSeconds(2f);
-           SceneManager.LoadScene(3);
+            SceneManager.LoadScene(3);
         }
 
     }
