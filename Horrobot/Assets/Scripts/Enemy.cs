@@ -20,16 +20,27 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject enemyExplosion;
     Boolean exploded = false;
+
+    AudioSource SGJ_SchritteV1;
+    public float offset;
     
 
     void Start()
     {
         rigidBody = this.GetComponent<Rigidbody2D>();
+       SGJ_SchritteV1 = GetComponent<AudioSource>();
+           
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Time.time > offset ){
+            if(!SGJ_SchritteV1.isPlaying)
+             SGJ_SchritteV1.Play();
+        }
+
+
         float amtToMove = moveSpeed * Time.deltaTime;
         if (direction)
             transform.position = Vector3.MoveTowards(transform.position, pointA, amtToMove );
