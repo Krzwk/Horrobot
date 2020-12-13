@@ -31,14 +31,18 @@ public class PlayerController : MonoBehaviour
     private static float Ar;
     
     private static float CO2;
-    private static float Kr = 3.30f;
+    public static float Kr = 3.30f;
     private static float timeBetweenCompDisplay = 1f; 
     private static float lastDisplay = 0f;
-    private float blinkRate = 0.1f;
-    private int numberOfTimesToBlink = 5;
+    private float blinkRate = 0.2f;
+    private int numberOfTimesToBlink = 7;
     private int blinkCount = 0;
     [SerializeField]
     private GameObject playerExplosion;
+    private static Boolean poisoned = false;
+    private static int timePoisoned = 0;
+    public static int maximalPoisonTime = 50;
+
 
     public enum MissingSenses{
         None,
@@ -97,7 +101,7 @@ public class PlayerController : MonoBehaviour
         myRigid.MovePosition(myRigid.position + move * moveSpeed * Time.fixedDeltaTime);
         //controller.Move(new Vector3(horizontalMove*10*Time.deltaTime,verticalMove*10*Time.deltaTime,0));
     }
-    public static void updateGasComp (){
+    public void updateGasComp (){
         N2 = UnityEngine.Random.Range(78.00f, 78.30f);
         N2 = N2 - N2 % 0.01f;
         O2 = UnityEngine.Random.Range(20.80f, 20.981f);
@@ -106,7 +110,22 @@ public class PlayerController : MonoBehaviour
         Ar = Ar - Ar % 0.01f;
         CO2 = UnityEngine.Random.Range(0.06f, 0.071f);
         CO2 = CO2 - CO2 % 0.01f;
+        if (!poisoned)
+        {   
         gasComposition.text = "Gas Composition:\nN2: " + N2.ToString() + "%" + "\nO2: " + O2.ToString() + "%"  + "\nAr: " + Ar.ToString() + "%" + "\nCO2: " + CO2.ToString() + "%" + "\nKr: " + Kr.ToString() + " ppm";
+        gasComposition.color = Color.green;
+        }
+        else 
+            {
+                gasComposition.text = "Gas Composition:\nN2: " + N2.ToString() + "%" + "\nO2: " + O2.ToString() + "%"  + "\nAr: " + Ar.ToString() + "%" + "\nCO2: " + CO2.ToString() + "%" + "\nKr: " + Kr.ToString() + " ppm\nWarning! Krypton levels unusually high.Leave area immediately!";
+                gasComposition.color = Color.red;
+                timePoisoned ++;
+                if (timePoisoned > maximalPoisonTime)
+                    {
+                        timePoisoned = 0;
+                        StartCoroutine(GotHit());
+                    }
+            }
 
     }
     
@@ -164,7 +183,7 @@ public class PlayerController : MonoBehaviour
             {
                 smellSensor = false;
                 gasComposition.text = "N2: ERROR %\nO2: ERROR %\nAr: ERROR %\nCO2: ERROR %\nKr: ERROR ppm";
-                Tutorial.text = "Error! Malfunction in hearing sensors detected!";
+                Tutorial.text = "Error! Malfunction in smelling sensors detected!";
             }
             gameObject.GetComponent<Renderer>().enabled = true;
             state = State.Invincible;
@@ -194,7 +213,25 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Tutorial.text = "Checking Systems...\nTrying wasd to move. Computing...";
         prog = TutorialProgress.done;
+        yield return new WaitForSeconds(5f);
+        Tutorial.text = "";
 
+    }
+    public IEnumerator whatsanenemy(enemyTutorialTrigger empty){
+        Tutorial.text = "Analysis: All robots seem to malfunction.\nShould keep a safe distance";
+        yield return new WaitForSeconds(5f);
+        Tutorial.text = "";
+        //empty.destroy();
+    }
+    public void gettingPoisoned(){
+        Kr = 10f;
+        poisoned = true;
+
+    }
+    public void gettingAir(){
+        Kr = 3.30f;
+        poisoned = false;
+        timePoisoned = 0;
     }
 }
 
