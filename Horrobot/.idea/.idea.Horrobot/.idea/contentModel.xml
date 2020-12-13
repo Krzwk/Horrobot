@@ -13,6 +13,12 @@
           <e p="CodeMinigame.cs" t="Include" />
           <e p="DoorBehaviour.cs" t="Include" />
           <e p="Enemy.cs" t="Include" />
+          <e p="enemyTutorialTrigger.cs" t="Include" />
+          <e p="Gascloud.cs" t="Include" />
+          <e p="HintDisplay.cs" t="Include" />
+          <e p="HintsBehaviour.cs" t="Include" />
+          <e p="Lösung.cs" t="Include" />
+          <e p="MediKit.cs" t="Include" />
           <e p="PfützleBehaviour.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
         </e>

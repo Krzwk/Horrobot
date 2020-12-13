@@ -22,13 +22,55 @@
     <list default="true" id="d04f4d7e-af44-4d52-a02f-7b18aa2370ef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Horrobot/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horrobot/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Horrobot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Horrobot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1/LightingData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1/LightingData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1/ReflectionProbe-0.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level 1/ReflectionProbe-0.exr.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-LS-LArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-LS-LArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-LS-RArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-LS-RArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-RS-LArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-RS-LArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-RS-RArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-RS-RArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-back-LArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-back-LArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-back-RArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-back-RArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-back.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-front-LArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-front-LArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-front-RArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-front-RArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-front.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-front.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-leftside.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-leftside.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-rightside.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/enemy-rightside.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-LS-LArmInFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-LS-LArmInFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-LS-RArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-LS-RArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-RS-LArmInFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-RS-LArmInFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-RS-RArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-RS-RArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-back-LArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-back-LArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-back-RArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-back-RArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-back.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-front-LArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-front-LArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-front-RArmFront.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-front-RArmFront.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-front.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-front.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-leftside.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-leftside.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-rightside.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Player&amp;EnemyAssets/robot-rightside.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +85,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AndGamePopUp.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AndButtonBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PfützleBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MediKit.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -55,6 +98,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DoorBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MediKit.cs" />
       </list>
     </option>
   </component>
@@ -105,7 +149,7 @@
       <option name="presentableId" value="Default" />
       <updated>1607774623599</updated>
       <workItem from="1607774637957" duration="1848000" />
-      <workItem from="1607787359500" duration="14260000" />
+      <workItem from="1607787359500" duration="18539000" />
     </task>
     <servers />
   </component>
